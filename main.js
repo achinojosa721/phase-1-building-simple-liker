@@ -1,8 +1,42 @@
 // Defining text characters for the empty and full hearts for you to use later.
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
+const errorModal = document.querySelector("#modal")
 
-// Your JavaScript code goes here!
+ // Your JavaScript code goes here!
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOMContentLoaded")
+  errorModal.classList.add("hidden")
+  
+
+  clickListener()
+
+})  
+function hideError(){
+  errorModal.classList.add("hidden")
+}
+//When user clicks on empty heart:
+// Invoke mimicServerCall to simulate making a server request
+
+//need an eventListener on all of the hearts
+function clickListener(){
+  document.addEventListener('click', (event) => {
+  
+    if(event.target.classList[0] === 'like-glyph'){
+      mimicServerCall()
+        .then(res => {
+          event.target.classList.add("activated-heart")
+        })
+        .catch(error => {
+            setTimeout(() => {
+              hideError()
+            }, 3000)
+        })
+    }
+  })
+}
+
+
 
 
 
