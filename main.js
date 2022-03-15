@@ -25,9 +25,15 @@ function clickListener(){
     if(event.target.classList[0] === 'like-glyph'){
       mimicServerCall()
         .then(res => {
-          event.target.classList.add("activated-heart")
+          if (event.target.classList.contains("activated-heart")){
+            event.target.classList.remove("activated-heart")
+          } else {
+            event.target.classList.add("activated-heart")
+          }
+         
         })
         .catch(error => {
+          errorModal.classList.remove("hidden")
             setTimeout(() => {
               hideError()
             }, 3000)
