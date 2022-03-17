@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })  
 function hideError(){
   errorModal.classList.add("hidden")
+  
 }
 //When user clicks on empty heart:
 // Invoke mimicServerCall to simulate making a server request
@@ -34,6 +35,7 @@ function clickListener(){
         })
         .catch(error => {
           errorModal.classList.remove("hidden")
+          errorModal.innerHTML = error;
             setTimeout(() => {
               hideError()
             }, 3000)
