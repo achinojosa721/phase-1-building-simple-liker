@@ -2,16 +2,14 @@
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 const errorModal = document.querySelector("#modal")
-
+hideError()
  // Your JavaScript code goes here!
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOMContentLoaded")
-  errorModal.classList.add("hidden")
-  
 
   clickListener()
-
 })  
+
 function hideError(){
   errorModal.classList.add("hidden")
   
