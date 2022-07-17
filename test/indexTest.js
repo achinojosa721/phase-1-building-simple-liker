@@ -11,3 +11,15 @@ describe( "main.js", () => {
     expect(modal).not.to.equal(null)
   } )
 } )
+function dropdownFilter(filterSelection, liBreedElement) {
+  constFirstLetterOfBreed = liBreedElement.innerText[0]
+  console.log(filterSelection, constFirstLetterOfBreed)
+  if(filterSelection === firstLetterOfBreed) {
+    liBreedElement.style.display = 'none'
+    console.log('hideme')
+  }else{
+    liBreedElement.style.display = 'block'
+    console.log('leaveme')
+  }
+
+}
